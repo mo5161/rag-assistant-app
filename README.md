@@ -49,14 +49,11 @@ llama3.2:3b
       |
       v
 Answer + Sources
-
-
-
-
-
+```
 
 ### End-to-End Application Flow
 
+```text
 User Question
       |
       v
@@ -85,8 +82,7 @@ Answer + Sources
       |
       v
 Streamlit UI
-
-
+```
 
 ---
 
@@ -275,28 +271,39 @@ Check Python:
 
 ```powershell
 python --version
-
+```
 
 Check Ollama:
 
+```powershell
 ollama --version
+```
 
 Download the required model:
 
+```powershell
 ollama pull llama3.2:3b
-Create Virtual Environment
+```
+
+### Create Virtual Environment
 
 From the project root:
 
+```powershell
 python -m venv .venv
+```
 
 Activate it:
 
+```powershell
 .venv\Scripts\activate
+```
 
 Install the backend dependencies:
 
+```powershell
 pip install -r backend/requirements.txt
+```
 
 
 
@@ -326,23 +333,19 @@ Open a terminal in the project root and run:
 
 ```powershell
 cd backend
-
+```
 
 Then start the FastAPI server:
 
+```powershell
 uvicorn app.main:app --reload
+```
 
-The backend will be available at:
+The backend will be available at: http://localhost:8000
 
-http://localhost:8000
+FastAPI Swagger documentation: http://localhost:8000/docs
 
-FastAPI Swagger documentation:
-
-http://localhost:8000/docs
-
-Health check:
-
-http://localhost:8000/health
+Health check: http://localhost:8000/health
 
 
 ---
@@ -353,24 +356,30 @@ Open another terminal and activate the virtual environment:
 
 ```powershell
 .venv\Scripts\activate
-
+```
 
 Install the frontend dependencies:
 
+```powershell
 pip install -r frontend/requirements.txt
+```
 
 Create:
 
-frontend/.env
+`frontend/.env`
 
 Add:
 
+```
 API_BASE_URL=http://localhost:8000
+```
 
 Start the Streamlit application:
 
+```powershell
 cd frontend
 streamlit run app.py
+```
 
 The frontend will normally be available at:
 
@@ -387,32 +396,38 @@ Checks whether the backend is running.
 
 ```powershell
 curl http://localhost:8000/health
-
-
+```
 
 Expected response:
 
+```json
 {
   "status": "ok"
 }
-POST /query
+```
+
+### POST /query
 
 Sends a laptop support question to the RAG pipeline.
 
 Request:
 
+```json
 {
   "question": "How do I charge the laptop?"
 }
+```
 
 Response:
 
+```json
 {
   "answer": "Answer generated from the retrieved laptop manual context.",
   "sources": [
     "HP"
   ]
 }
+```
 
 
 
@@ -430,12 +445,13 @@ Run:
 ```powershell
 cd backend
 pytest
-
-
+```
 
 Expected result:
 
+```
 2 passed
+```
 
 The invalid input test verifies that a request without the required question field returns HTTP 422.
 
@@ -564,6 +580,7 @@ Answer + Sources
       |
       v
 Streamlit UI
+```
 
 
 
