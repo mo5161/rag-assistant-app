@@ -521,10 +521,11 @@ The main RAG configuration is stored in:
 
 Screenshots of the running application can be added here to demonstrate the end-to-end system.
 
-Recommended screenshots:
+### Frontend
 
-1. Streamlit frontend showing a real question, answer, and sources.
-2. FastAPI Swagger UI showing the `/health` and `/query` endpoints.
+![Laptop Support Assistant](frontend-screenshot.png)
+
+
 
 
 
