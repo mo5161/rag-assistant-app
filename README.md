@@ -88,6 +88,7 @@ Streamlit UI
 
 ## Project Structure
 
+```text
 Laptop_Support_RAG/
 |
 |-- README.md
@@ -134,6 +135,7 @@ Laptop_Support_RAG/
 |
 |-- data/
     |-- pdfs/
+```
 
 
 
