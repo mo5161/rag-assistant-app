@@ -14,12 +14,11 @@ __pycache__/
 # Raw document corpus
 data/pdfs/
 
-# Local vector store
-backend/data/vector_store/
-
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
 # OS files
 .DS_Store
 Thumbs.db
+# Pytest cache
+.pytest_cache/
